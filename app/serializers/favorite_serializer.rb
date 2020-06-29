@@ -1,5 +1,4 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  attributes :id
-  has_one :user
-  has_one :pokemon
+  attributes :id, :user, :pokemon_name, :types, :sprites
+  belongs_to :user
 end

@@ -17,20 +17,19 @@ ActiveRecord::Schema.define(version: 2020_06_27_011738) do
 
   create_table "favorites", force: :cascade do |t|
     t.bigint "user_id", null: false
-    t.bigint "pokemon_id", null: false
+    t.string "pokemon_name"
+    t.string "types"
+    t.string "sprites"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["pokemon_id"], name: "index_favorites_on_pokemon_id"
     t.index ["user_id"], name: "index_favorites_on_user_id"
   end
 
   create_table "pokemons", force: :cascade do |t|
     t.integer "user_id"
     t.string "name"
-    t.string "abilities"
+    t.string "types"
     t.string "sprites"
-    t.integer "height"
-    t.integer "weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -42,6 +41,5 @@ ActiveRecord::Schema.define(version: 2020_06_27_011738) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "favorites", "pokemons"
   add_foreign_key "favorites", "users"
 end
