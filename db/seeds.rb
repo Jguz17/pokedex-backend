@@ -9,10 +9,11 @@
 User.create(username: 'test', password: '123')
 User.create(username: 'john', password: '123')
 
-Pokemon.create(user_id: 2, name: 'bulba')
-Pokemon.create(user_id: 2, name: 'charr')
+Pokemon.create(user_id: 2, dex_id: 150, name: 'mewtwo', types: ['psychic', 'normal'], sprites: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/150.png')
+Pokemon.create(user_id: 2, name: 'dragonite')
+Pokemon.create(user_id: 2, name: 'charmander')
 Pokemon.create(user_id: 1, name: 'squirt')
 Pokemon.create(user_id: 1, name: 'test')
 
-Favorite.create(user_id: 2, pokemon_name: 'bulba')
-Favorite.create(user_id: 2, pokemon_name: 'charr')
+Favorite.create(user_id: 2, pokemon_name: 'squirtle')
+Favorite.create(user_id: 2, pokemon_name: 'pidgeot')

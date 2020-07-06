@@ -4,7 +4,7 @@ class CreateFavorites < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.string :pokemon_name
       t.string :types, :default => nil
-      t.string :sprites
+      t.string :sprites, :default => nil
        
       t.timestamps
     end

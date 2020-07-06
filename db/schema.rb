@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 2020_06_27_011738) do
 
   create_table "pokemons", force: :cascade do |t|
     t.integer "user_id"
+    t.integer "dex_id"
     t.string "name"
-    t.string "types"
+    t.string "types", default: [], array: true
     t.string "sprites"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

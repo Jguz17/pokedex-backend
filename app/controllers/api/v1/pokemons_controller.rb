@@ -12,7 +12,7 @@ class Api::V1::PokemonsController < ApplicationController
         types = params[:types]
         sprites = params[:sprites]
 
-        pokemon = Pokemon.create(user_id: user_id, name: name, types: type, sprites: sprites)
+        pokemon = Pokemon.create(user_id: user_id, name: name, types: types, sprites: sprites)
         render json: pokemon
     end
 
@@ -28,7 +28,7 @@ class Api::V1::PokemonsController < ApplicationController
         types = params[:types]
         sprites = params[:sprites]
 
-        pokemon.create(user_id: user_id, name: name, types: type, sprites: sprites)
+        pokemon.update(user_id: user_id, name: name, types: types, sprites: sprites)
         render json: pokemon
     end
 
