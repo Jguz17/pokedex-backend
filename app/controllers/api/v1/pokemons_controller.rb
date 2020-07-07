@@ -9,10 +9,11 @@ class Api::V1::PokemonsController < ApplicationController
     def create
         user_id = params[:user_id]
         name = params[:name]
+        dex_id = params[:dex_id]
         types = params[:types]
         sprites = params[:sprites]
 
-        pokemon = Pokemon.create(user_id: user_id, name: name, types: types, sprites: sprites)
+        pokemon = Pokemon.create(user_id: user_id, name: name, dex_id: dex_id, types: types, sprites: sprites)
         render json: pokemon
     end
 
@@ -23,12 +24,9 @@ class Api::V1::PokemonsController < ApplicationController
     def update
         pokemon = Pokemon.find(params[:id])
 
-        user_id = params[:user_id]
         name = params[:name]
-        types = params[:types]
-        sprites = params[:sprites]
 
-        pokemon.update(user_id: user_id, name: name, types: types, sprites: sprites)
+        pokemon.update(name: name)
         render json: pokemon
     end
 
